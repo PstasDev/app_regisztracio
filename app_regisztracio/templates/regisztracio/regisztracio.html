@@ -1,0 +1,17 @@
+{% extends "regisztracio/base.html" %}
+
+{% block content %}
+<h2>Új fiók regisztrációja</h2>
+  <form method="post">
+    {% csrf_token %}
+      <label for="id_username">E-mail:</label>
+      <input type="text" name="email" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+      <label for="id_password">Jelszó:</label>
+      <input type="password" name="password" autocomplete="current-password" required id="id_password">
+      <label for="id_password">Vezetéknév:</label>
+      <input type="text" name="last_name" required>
+      <label for="id_password">Keresztnév:</label>
+      <input type="text" name="first_name" required>
+    <button type="submit">Regisztráció</button>
+  </form>
+{% endblock %}

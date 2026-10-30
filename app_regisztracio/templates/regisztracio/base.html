@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SZLG applikációk" />
+
+    {% comment %} fonts {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/fav.ico' %}"/>
+
+    <link rel="stylesheet" href="{% static 'registration/registration.css' %}">
+
+    <title>SZLG appok</title>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="https://szlgbp.hu">
+                <img src="{% static 'registration/img/szlgbp_cimer_g_512.png' %}" alt="" class="logo">
+            </a>
+            {% block theh1 %}{% endblock %}
+        </header>
+        
+        <section class="tartalom">
+            {% block content %}
+            {% endblock %}
+        </section>
+    </main>
+
+    <footer class="row">
+        <h4><a href="mailto:molnar.attila@szlgbp.hu">molnar.attila@szlgbp.hu</a></h4>
+    </footer>
+</body>
+</html>

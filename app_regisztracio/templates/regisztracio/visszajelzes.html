@@ -1,0 +1,27 @@
+{% extends "regisztracio/base.html" %}
+
+{% block theh1 %}<h1>Regisztráció</h1>{% endblock %}
+
+{% block content %}
+
+<section class="tartalom">
+    <h3>{{ rovid }}</h3>
+    <p>{{ hosszu }}</p>
+    <a href="/"><button>Főoldalra</button></a>
+
+    
+    {% if next %}
+        <a href="/{{ next }}"><button>Vissza</button></a>
+    {% endif %}
+        
+    
+    {% if request.user.is_authenticated %}
+        <form action="{%  url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Kijelentkezés</button>
+        </form>        
+    {% endif %}
+        
+</section>
+
+{% endblock%}

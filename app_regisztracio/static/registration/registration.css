@@ -1,0 +1,388 @@
+:root{
+    --kek: rgb(51, 60, 62);
+    --vkek: rgb(205, 220, 223);
+    --barna: rgb(168, 110, 67);
+    --feher: rgb(255, 255, 255);
+    --link: rgb(19, 160, 255);
+    --error: rgb(255, 21, 21);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+}
+html, body{
+    height: 100%;
+}
+
+.logout, .out{
+    margin: 0;
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    font-size: 12pt;
+}
+
+body{
+    display: grid;
+    grid-template-rows:1fr fit-content(100%);
+
+    font-family: 'Merriweather', serif;
+    font-size: large;
+
+    background-color: var(--feher);
+    color: var(--kek);
+}
+
+
+
+header{
+    margin-block: 4em -3em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header .logo{
+    height: 150px;
+}
+header h1{
+    margin: 0;
+}
+
+
+main{
+    padding: 10vh 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    gap: 5em;
+
+    transition: .2s;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section.tartalom{
+    gap: 3vw;
+    row-gap: 2em;
+}
+section.row{
+    margin-top: 2em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vw;
+    row-gap: 2em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li{
+    text-align: left;
+    margin:5px;
+    margin:20px;
+}
+
+footer{
+    padding: .5em 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10vw;
+    row-gap: 2vw;
+
+    background-color: var(--kek);
+    color: var(--feher);
+    text-align: center;
+}
+
+
+section h1,
+section h2,
+section h3,
+section p , article p{
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+
+h1, h2,
+h3, h4,
+p, a,
+button, .button,
+input[type=submit]{
+    font-size: inherit;
+	font-family: inherit;
+}
+
+footer a {
+    color:white;
+}
+
+h1{
+    font-size: 35pt;
+}
+h2{
+    font-size: 20pt;
+}
+h3{
+    font-size: 18pt;
+}
+h4{
+    width: fit-content;
+    font-size: 8pt;
+}
+p {
+    width: 80%;
+    font-weight: 400;
+    font-size: large;
+    color: var(--heading-color);
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+    color: var(--link);
+    font-weight: bold;
+    transition: .2s;
+}
+a:hover{
+    color: var(--barna);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    text-align: center;
+}
+
+
+.button, button, input[type=submit]{
+    padding: 1em 1.5em;
+
+    background-color: var(--kek);
+    color: var(--feher);    
+    text-decoration: none;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 16pt;
+
+    border: none;
+    border-radius: 75px;
+
+    transition: .2s;
+}
+.button:hover, button:hover, input[type=submit]:hover{
+    background-color: var(--barna);
+    cursor: pointer;
+}
+button.circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em 2em;
+    border-radius: 150px;
+}
+button.circle::after{
+    content: '▶';
+    font-size: 22pt;
+}
+#videok div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#videok h3{
+    width: fit-content;
+}
+
+iframe{
+    height: 10vw;
+    width: 30%;
+}
+
+label{
+    margin-bottom: -1em;
+}
+
+input{
+    width: calc(100% - 10px);
+    padding: 8px 10px;
+    font-size: 12pt;
+    font-family: 'Merriweather', serif;
+}
+input:focus {
+	border: 2px #333c3e solid;
+}
+
+
+
+#informaciok{
+    display: grid;
+    place-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+
+.error{
+    width: 80%;
+    list-style: none;
+    font-weight: 700;
+    color: var(--error);
+}
+
+/* MOBIL */
+@media all and (max-width: 1200px){
+    main{
+        padding: 10vh 7%;
+    }
+    .tartalom {
+		width: 100% !important;
+	}
+
+    iframe{
+        height: 19vw;
+        width: 45%;
+    }
+}
+@media all and (max-width: 800px){
+    .out, .logout{
+        position: relative;
+        right: 0;
+
+        display: grid;
+        place-items: center;
+    }
+
+    main{
+        padding: 2vh 5%;
+    }
+
+    header{
+        width: 100%;
+        margin-block: 0;
+        padding-block: .2em;
+        
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: var(--kek) solid 1px;
+    }
+    header .logo{
+        height: 50px;
+    }
+    footer{
+        margin-top: 4em;
+    }
+
+
+
+    section.row{
+        flex-direction: column;
+        margin-bottom: 5em;
+    }
+    section.tartalom{
+        height: 80%;
+        width: 70%;
+    }
+
+    h1{
+        font-size: 22pt;
+    }
+    section h3{
+        margin-bottom: 3em -2em;
+    }
+    section p {
+		width: 100%;
+	}
+
+    iframe{
+        margin-bottom: 7vw;
+        height: 49vw;
+        width: 100%;
+    }
+    button, input[type=submit]{
+        margin-top: 1em;
+        font-size: 18pt;
+    }
+    ul{
+        margin-left: 5vw;
+    }
+}
+
+.logout, .out{
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 12pt;
+}
+
+@media all and (max-width: 800px){
+    .out, .logout{
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-block: -4em auto;
+        align-self: flex-end;
+    }
+}
+
+
+/* felvételi rangsorok táblázatai */
+
+
+table tr th, table tr td{
+    text-align: center;
+}
+
+
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+  
+th, td {
+    border: 1px solid black;
+}
+
+td{
+    padding:5px;
+}
+
+th{
+    padding:15px;
+    background-color:#333c3e;
+    color:white;
+    /* position: sticky;
+    top: 0; */
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tagozat{
+    text-align: start;
+}
+

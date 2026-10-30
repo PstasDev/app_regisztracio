@@ -1,0 +1,25 @@
+{% extends "regisztracio/base.html" %}
+
+{% block theh1 %}<h1>Appok</h1>{% endblock %}
+
+{% block content %}
+
+<nav>
+    <ul>
+        {% for link in linkek %}
+        <li><a href="/{{ link.url }}/"><button>{{ link.nev }}</button></a></li>
+        {% endfor %}
+
+        {% if request.user.is_authenticated %}
+        <li>
+            {% include "registration/kijelentkezes.html" %}
+        </li>
+    {% endif %}
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+
+
